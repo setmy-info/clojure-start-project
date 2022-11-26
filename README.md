@@ -50,3 +50,7 @@ lein test
 lein uberjar
 java -jar ".\target\default+uberjar\tutorial-0.1.0-SNAPSHOT-standalone.jar" fff
 ```
+
+## See also
+
+[LISP know how](https://setmy-info.github.io/src/site/markdown/lisp.html)
