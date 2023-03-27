@@ -55,6 +55,7 @@
 
     <build>
         <defaultGoal>spring-boot:run</defaultGoal>
+        <!-- defaultGoal>clojure:run</defaultGoal -->
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
