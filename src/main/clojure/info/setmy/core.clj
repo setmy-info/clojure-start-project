@@ -131,5 +131,10 @@
     (println "Minime: " (ishe "Minime"))
     (println "Minime: " (ishe "Me"))
     (println "Returned: " (return-true))
+
+    ; like a class
+    (defrecord Person [first-name last-name])
+    (def person1 (->Person "Imre" "Tabur"))
+    (println (:first-name person1))
     ;;
     )
