@@ -11,21 +11,22 @@
 ### Execution
 
 ```shell
-.\mvnw -Dspring-boot.run.arguments="-n info.setmy.main -s info/setmy/main.clj -m default-main"
+.\mvnw -Dspring-boot.run.arguments="-n info.setmy.core -s info/setmy/core.clj"
 ```
 
 ```shell
-./mvnw -Dspring-boot.run.arguments="-n info.setmy.main -s info/setmy/main.clj -m default-main"
+./mvnw -Dspring-boot.run.arguments="-n info.setmy.core -s info/setmy/core.clj"
 ```
 
 ```shell
-java -jar ./target/clojure-start-project-0.0.0-SNAPSHOT.jar -n info.setmy.main -s info/setmy/main.clj -m default-main
+java -jar ./target/clojure-start-project-0.0.0-SNAPSHOT.jar -n info.setmy.core -s info/setmy/core.clj
 ```
 
 #### Clojure run
 
 ```shell
 .\mvnw clojure:run
+
 ```
 
 ```shell

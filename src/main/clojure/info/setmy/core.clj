@@ -1,6 +1,11 @@
 (ns info.setmy.core
     (:require [clojure.string :as str])
-    (:gen-class))
+    ;(:require [info.setmy.services.greet :as greet])
+    ;(:require [info.setmy.services.barService :as barService])
+    ; (:require [info.setmy.services.getBar :as getBar])
+    (:gen-class)
+    ; TODO : remove "use", prefer require
+    (:use info.setmy.services))
 
 (def aString "String")
 (def aLong 14)
@@ -34,6 +39,17 @@
 
     (println "Hello, World!")
 
+    ;;
+    (println "Hello World from Clojure!")
+    (println "System: " (.. System (getProperties) (get "os.name")))
+    (println "Java: " (.. info.setmy.clojure.BarService (getFoo)))
+    (println "Java Service: " (.. info.setmy.clojure.BarService/barService (getBar "Imre")))
+    (println "Service function: " (getBar "Imre"))
+    (println "Hello World from Clojure!")
+    (println (greet "Imre"))
+    (println "Java main called clojure function with args: "
+             (apply str (interpose " " args)))
+    ;;
     (println "aLong Nil?: " (nil? aLong))
     (println "aXyz Nil?: " (nil? aXyz))
     ;(println "nothing Nil?: " (nil? nothing)) ; wont work:Syntax error compiling at (tutorial\core.clj:20:31). ;Unable to resolve symbol: nothing in this context
@@ -132,9 +148,12 @@
     (println "Minime: " (ishe "Me"))
     (println "Returned: " (return-true))
 
-    ; like a class
-    (defrecord Person [first-name last-name])
+    ; Generates a class: public final class info.setmy.core.Person implements IRecord, IHashEq, IObj, ILookup, IKeywordLookup, IPersistentMap, Map, Serializable
+    (defrecord Person [firstName lastName])
     (def person1 (->Person "Imre" "Tabur"))
-    (println (:first-name person1))
-    ;;
-    )
+    (println (:firstName person1))
+
+    ;sequence of strings to integer list
+    (map #(Integer/parseInt %) ["1" "2" "3" "4"])
+    ; add security risk
+    (map read-string ["1" "2.2" "3/4" "true"]))

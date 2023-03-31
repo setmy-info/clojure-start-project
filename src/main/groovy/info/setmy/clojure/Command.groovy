@@ -13,9 +13,9 @@ import java.util.concurrent.Callable
 @CommandLine.Command(name = "clojure", mixinStandardHelpOptions = true, version = "0.0.0-SNAPSHOT", description = "Clojure learning")
 class Command implements Callable<Integer> {
 
-    private static final String DEFAULT_MAIN_CLJ_SCRIPT = "info/setmy/main.clj"
-    private static final String DEFAULT_NAME_SPACE = "info.setmy.main"
-    private static final String DEFAULT_MAIN_NAME = "default-main"
+    private static final String DEFAULT_MAIN_CLJ_SCRIPT = "info/setmy/core.clj"
+    private static final String DEFAULT_NAME_SPACE = "info.setmy.core"
+    private static final String DEFAULT_MAIN_NAME = "-main"
 
     @CommandLine.Option(names = ["-n", "--namespace"], required = false, paramLabel = "namespace", description = "namespace")
     private Optional<String> namespace;
